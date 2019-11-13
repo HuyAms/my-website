@@ -1,8 +1,8 @@
 import React from 'react'
-import './App.css'
+import {Wrapper} from './style'
 
 const App: React.FC = () => {
-	return <div>Hello world!</div>
+	return <Wrapper>Hello world!</Wrapper>
 }
 
 export default App
