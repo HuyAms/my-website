@@ -7,6 +7,7 @@
 		"@types/node": "12.12.7",
 		"@types/react": "16.9.11",
 		"@types/react-dom": "16.9.4",
+		"husky": "^3.0.9",
 		"react": "^16.11.0",
 		"react-dom": "^16.11.0",
 		"react-scripts": "3.2.0",
@@ -20,8 +21,17 @@
 		"format": "prettier \"**/*.+(js|jsx|json|ts|tsx|css|scss|md|mdx|graphql)\" --write",
 		"lint": "eslint \"src/**/**.ts*\""
 	},
-	"eslintConfig": {
-		"extends": "react-app"
+	"lint-staged": {
+		"src/*.{ts, tsx}": "npm run lint",
+		"**/*.+(js|jsx|json|ts|tsx|css|scss|md|mdx|graphql)": [
+			"npm run format",
+			"git add"
+		]
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
 	},
 	"browserslist": {
 		"production": [
@@ -41,6 +51,7 @@
 		"eslint": "^6.6.0",
 		"eslint-config-prettier": "^6.5.0",
 		"eslint-plugin-prettier": "^3.1.1",
+		"lint-staged": "^10.0.0-1",
 		"prettier": "1.19.1"
 	}
 }
