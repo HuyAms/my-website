@@ -4,7 +4,7 @@ import {Link} from '@reach/router'
 export const HeaderWrapper = styled.header`
 	display: flex;
 	justify-content: space-between;
-	padding: 3rem;
+	padding: 3.2rem 9rem;
 `
 
 export const LogoText = styled(Link)`
@@ -31,7 +31,7 @@ export const StyledLink = styled(Link)`
 	}
 
 	&:not(:last-child) {
-		margin-right: 1.8rem;
+		margin-right: 3.6rem;
 	}
 `
 
@@ -52,6 +52,6 @@ export const SocialLinkItem = styled.a`
 	}
 
 	&:not(:last-child) {
-		margin-right: 1.8rem;
+		margin-right: 3.6rem;
 	}
 `
