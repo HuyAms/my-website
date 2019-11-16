@@ -1,9 +1,10 @@
 import React from 'react'
+import Header from '../components/Header/Header'
 
 const AppLayout: React.FunctionComponent = props => {
 	return (
 		<div>
-			<h1>This is the header</h1>
+			<Header />
 			{props.children}
 		</div>
 	)
