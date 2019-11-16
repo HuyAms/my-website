@@ -1,17 +1,12 @@
 import {css, DefaultTheme} from 'styled-components'
 
 export const colors = {
-	blue: '#001BB7',
-	cyan: '#8DF5D9',
 	white: '#ffffff',
 	black: '#000000',
-	lightGrey: '#C4C4C4',
-	gray: '#C4C4C4',
+	gray: '#909090',
 }
 
 export const appColors = {
-	primary: colors.blue,
-	secondary: colors.cyan,
 	text: colors.black,
 }
 

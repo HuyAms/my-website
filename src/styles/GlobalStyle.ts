@@ -2,6 +2,15 @@ import {createGlobalStyle} from 'styled-components'
 import {media} from './utils'
 
 export const GlobalStyle = createGlobalStyle`
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
 :root {
 	font-size: 62.5%;
 		
@@ -19,11 +28,11 @@ export const GlobalStyle = createGlobalStyle`
 		font-weight: 400;
 		line-height: 1.7;
 		color: ${props => props.theme.appColors.text} ;
-		font-size: ${props => props.theme.fontSizes.md} ;
+		font-size: ${props => props.theme.fontSizes.md};
+		box-sizing: border-box;
 	}
 	
 	h1 {
-		margin: 0;
 		font-size: ${props => props.theme.fontSizes.xl};
 		line-height: 1.16;
 	}

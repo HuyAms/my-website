@@ -1,3 +1,5 @@
+import {css} from 'styled-components'
+
 export const maxWidth = (maxWidth: number) =>
 	`@media (max-width: ${maxWidth / 16}em)`
 export const minWidth = (minWidth: number) =>
@@ -9,3 +11,8 @@ export const media = {
 	tabLand: maxWidth(1200),
 	bigDesktop: minWidth(1800),
 }
+
+const container = () => css`
+	max-width: 114rem;
+	margin: 0 auto;
+`
