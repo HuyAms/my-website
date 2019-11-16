@@ -15,9 +15,7 @@ export const appColors = {
 	text: colors.black,
 }
 
-export const fontStack = css`'Arimo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-			Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-			'Segoe UI Symbol'`
+export const fontStack = css`'Nunito', sans-serif`
 
 export const fontSizes = {
 	xs: '0.8rem',
