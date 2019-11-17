@@ -6,6 +6,7 @@ import TechnicalSkills from './components/TechnicalSkills/TechnicalSkills'
 import Resume from './components/Resume/Resume'
 import Container from '../../components/Container/Container'
 import Fact from './components/Fact/Fact'
+import Contact from './components/Contact/Contact'
 
 interface Props extends RouteComponentProps {}
 
@@ -25,6 +26,7 @@ const Home: React.FC<Props> = () => {
 			<TechnicalSkills />
 			<Resume />
 			<Fact />
+			<Contact />
 		</>
 	)
 }

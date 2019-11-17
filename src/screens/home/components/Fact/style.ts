@@ -7,7 +7,6 @@ export const FactWrapper = styled.section`
 
 export const FactSection = styled.div`
 	display: flex;
-	//background-color: yellow;
 
 	${media.phone} {
 		flex-direction: column-reverse;
@@ -16,7 +15,6 @@ export const FactSection = styled.div`
 
 export const FactHeader = styled.div`
 	flex: 1;
-	//background-color: red;
 `
 
 export const FactImage = styled.img`
@@ -25,7 +23,6 @@ export const FactImage = styled.img`
 
 export const FactContent = styled.div`
 	flex: 1;
-	//background-color: blue;
 	display: flex;
 	justify-content: center;
 	align-items: center;

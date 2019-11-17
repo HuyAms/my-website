@@ -28,6 +28,5 @@ export const ResumeHeader = styled.div`
 `
 
 export const ResumeContent = styled.div`
-	//background-color: blue;
 	flex: 2;
 `
