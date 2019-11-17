@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 import {media} from '../../../../styles/utils'
+import Container from '../../../../components/Container/Container'
 
 export const ContactWrapper = styled.section`
 	padding: 9.6rem 1rem;
-	background-color: #f5f6f8;
+	background-color: ${props => props.theme.appColors.darkBackground};
 `
 
 export const ContactSection = styled.div`

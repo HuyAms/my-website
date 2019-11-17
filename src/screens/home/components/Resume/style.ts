@@ -3,7 +3,7 @@ import {media} from '../../../../styles/utils'
 
 export const ResumeWrapper = styled.section`
 	padding: 9.6rem 1rem;
-	background-color: #f5f6f8;
+	background-color: ${props => props.theme.appColors.darkBackground};
 `
 
 export const ResumeSection = styled.div`
