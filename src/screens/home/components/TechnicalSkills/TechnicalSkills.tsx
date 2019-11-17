@@ -17,6 +17,11 @@ import IconIos from '../../../../assets/ios.png'
 import IconAndroid from '../../../../assets/android.png'
 import IconKotlin from '../../../../assets/kotlin.png'
 import IconJava from '../../../../assets/java.png'
+import IconContentful from '../../../../assets/contentful.png'
+import IconWebpack from '../../../../assets/webpack.png'
+import IconSass from '../../../../assets/sass.svg'
+import IconD3 from '../../../../assets/d3.png'
+
 import Container from '../../../../components/Container/Container'
 
 const TechnicalSkills = () => {
@@ -32,11 +37,15 @@ const TechnicalSkills = () => {
 				<TechnicalSkillsContainer>
 					<TechnicalSkillsImage src={IconReact} alt="" />
 					<TechnicalSkillsImage src={IconNodeJS} alt="" />
+					<TechnicalSkillsImage src={IconWebpack} alt="" />
+					<TechnicalSkillsImage src={IconD3} alt="" />
 					<TechnicalSkillsImage src={IconWordpress} alt="" />
+					<TechnicalSkillsImage src={IconContentful} alt="" />
 					<TechnicalSkillsImage src={IconTypescript} alt="" />
 					<TechnicalSkillsImage src={IconJavascript} alt="" />
 					<TechnicalSkillsImage src={IconHtml} alt="" />
 					<TechnicalSkillsImage src={IconCss} alt="" />
+					<TechnicalSkillsImage src={IconSass} alt="" />
 					<TechnicalSkillsImage src={IconSwift} alt="" />
 					<TechnicalSkillsImage src={IconIos} alt="" />
 					<TechnicalSkillsImage src={IconAndroid} alt="" />
