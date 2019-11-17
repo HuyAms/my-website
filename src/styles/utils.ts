@@ -18,7 +18,9 @@ export const media = {
 	bigDesktop: minWidth(ScreenSizes.bigDesktop),
 }
 
-const container = () => css`
+export const container = () => css`
 	max-width: 114rem;
 	margin: 0 auto;
+	padding-left: 1rem;
+	padding-right: 1rem;
 `

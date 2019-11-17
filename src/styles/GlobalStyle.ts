@@ -25,7 +25,7 @@ export const GlobalStyle = createGlobalStyle`
 
  body {
 		font-family: ${props => props.theme.fontStack};
-		font-weight: 400;
+		font-weight: 300;
 		line-height: 1.7;
 		color: ${props => props.theme.appColors.text} ;
 		font-size: ${props => props.theme.fontSizes.md};
@@ -34,15 +34,17 @@ export const GlobalStyle = createGlobalStyle`
 	
 	h1 {
 		font-size: ${props => props.theme.fontSizes.xl};
-		line-height: 1.16;
+		line-height: 1.5;
+		font-weight: 400;
 	}
 	
 	h2 {
 		font-size: ${props => props.theme.fontSizes.lg};
+				font-weight: 400;
 	}
 	
 	p {
-		font-size: ${props => props.theme.fontSizes.lg};
+		font-size: ${props => props.theme.fontSizes.md};
 		margin: 0 0 1rem;
 	}
 	

@@ -16,9 +16,9 @@ export const fontSizes = {
 	xs: '0.8rem',
 	sm: '1.4rem',
 	md: '1.6rem',
-	lg: '2.4rem',
+	lg: '3.2rem',
 	xl: '3.6rem',
-	xxl: '6rem',
+	xxl: '5.4rem',
 }
 
 const space = [
