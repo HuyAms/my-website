@@ -1,3 +1,4 @@
+import 'sanitize.css/sanitize.css'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
@@ -5,7 +6,6 @@ import * as serviceWorker from './serviceWorker'
 import {GlobalStyle} from './styles/GlobalStyle'
 import {ThemeProvider} from 'styled-components'
 import {theme} from './styles/theme'
-import 'sanitize.css/sanitize.css'
 
 const app = (
 	<ThemeProvider theme={theme}>
