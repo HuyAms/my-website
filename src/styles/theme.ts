@@ -1,23 +1,16 @@
 import {css, DefaultTheme} from 'styled-components'
 
 export const colors = {
-	blue: '#001BB7',
-	cyan: '#8DF5D9',
 	white: '#ffffff',
 	black: '#000000',
-	lightGrey: '#C4C4C4',
-	gray: '#C4C4C4',
+	gray: '#909090',
 }
 
 export const appColors = {
-	primary: colors.blue,
-	secondary: colors.cyan,
 	text: colors.black,
 }
 
-export const fontStack = css`'Arimo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-			Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-			'Segoe UI Symbol'`
+export const fontStack = css`'Nunito', sans-serif`
 
 export const fontSizes = {
 	xs: '0.8rem',
