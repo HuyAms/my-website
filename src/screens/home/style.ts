@@ -1,8 +1,7 @@
 import styled from 'styled-components'
-import {container, media} from '../../styles/utils'
+import {media} from '../../styles/utils'
 
-export const BannerContainer = styled.section`
-	${container};
+export const BannerWrapper = styled.section`
 	padding: 9.6rem 1rem;
 `
 
