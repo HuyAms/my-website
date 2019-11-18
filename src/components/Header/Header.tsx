@@ -11,13 +11,14 @@ import {
 	MobileNavigationOverLay,
 	MobileNavigation,
 	MobileSocialLinks,
-	Icon,
 	MobileSocialIcon,
+	Icon,
 } from './style'
 import MenuCloseIcon from '../../assets/menu-close.svg'
 import MenuOpenIcon from '../../assets/menu-open.svg'
 import GithubIcon from '../../assets/github.svg'
 import LinkedInIcon from '../../assets/linkedin.svg'
+import MailIcon from '../../assets/email.png'
 import {useWindowDimensions} from '../../utils/utils'
 import {ScreenSizes} from '../../styles/utils'
 
@@ -43,12 +44,16 @@ const Header: React.FunctionComponent = () => {
 			<Navigation>
 				<NavLink to="/">Welcome</NavLink>
 				<NavLink to="/projects">Projects</NavLink>
+				<NavLink to="/blogs">Blogs</NavLink>
 			</Navigation>
 			<LogoText to="/">Huy Trinh</LogoText>
 			<SocialLinks>
 				<SocialLinkItem href="https://github.com/HuyAms">Github</SocialLinkItem>
 				<SocialLinkItem href="https://www.linkedin.com/in/huy-trinh-dinh-253534131/">
 					LinkedIn
+				</SocialLinkItem>
+				<SocialLinkItem href="https://www.linkedin.com/in/huy-trinh-dinh-253534131/">
+					Contact
 				</SocialLinkItem>
 			</SocialLinks>
 		</HeaderWrapper>
@@ -71,10 +76,18 @@ const Header: React.FunctionComponent = () => {
 				<MobileNavigation>
 					<NavLink to="/">Welcome</NavLink>
 					<NavLink to="/projects">Projects</NavLink>
+					<NavLink to="/blogs">Blogs</NavLink>
 				</MobileNavigation>
 				<MobileSocialLinks>
-					<MobileSocialIcon src={GithubIcon} />
-					<MobileSocialIcon src={LinkedInIcon} />
+					<MobileSocialIcon href="">
+						<Icon src={GithubIcon} />
+					</MobileSocialIcon>
+					<MobileSocialIcon href="">
+						<Icon src={LinkedInIcon} />
+					</MobileSocialIcon>
+					<MobileSocialIcon href="">
+						<Icon src={MailIcon} />
+					</MobileSocialIcon>
 				</MobileSocialLinks>
 			</MobileNavigationOverLay>
 		</HeaderMobileWraper>
