@@ -1,28 +1,24 @@
 import React from 'react'
 import {RouteComponentProps} from '@reach/router'
-import {BannerWrapper, BannerText, BannerImage} from './style'
-import Banner from '../../assets/banner.jpg'
+import BannerImage from '../../assets/banner.jpg'
 import TechnicalSkills from './components/TechnicalSkills/TechnicalSkills'
 import Resume from './components/Resume/Resume'
-import Container from '../../components/Container/Container'
 import Fact from './components/Fact/Fact'
 import Contact from './components/Contact/Contact'
+import Banner from '../../components/Banner/Banner'
 
 interface Props extends RouteComponentProps {}
+
+const mockHomeBanner = {
+	content:
+		'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sodales eget leo et dignissim. Proin tincidunt lacus lacinia turpis gravida hendrerit',
+	imgUrl: BannerImage,
+}
 
 const Home: React.FC<Props> = () => {
 	return (
 		<>
-			<BannerWrapper>
-				<Container>
-					<BannerText>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						Pellentesque lobortis cursus lectus ac suscipit. Phasellus vel risus
-						tincidunt, eleifend leo
-					</BannerText>
-				</Container>
-			</BannerWrapper>
-			<BannerImage style={{backgroundImage: `url(${Banner})`}}></BannerImage>
+			<Banner text={mockHomeBanner.content} imageUrl={mockHomeBanner.imgUrl} />
 			<TechnicalSkills />
 			<Resume />
 			<Fact />

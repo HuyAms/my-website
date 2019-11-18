@@ -4,10 +4,12 @@ export const colors = {
 	white: '#ffffff',
 	black: '#000000',
 	gray: '#909090',
+	lightGray: '#f5f6f8',
 }
 
 export const appColors = {
 	text: colors.black,
+	darkBackground: colors.lightGray,
 }
 
 export const fontStack = css`'Nunito', sans-serif`
