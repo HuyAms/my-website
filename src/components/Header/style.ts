@@ -124,7 +124,7 @@ export const MobileSocialLinks = styled.ul`
 	margin-top: 7.3rem;
 `
 
-export const MobileSocialIcon = styled(Icon)`
+export const MobileSocialIcon = styled.a`
 	&:not(:last-child) {
 		margin-right: 3.6rem;
 	}
