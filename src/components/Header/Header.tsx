@@ -11,7 +11,6 @@ import {
 	MobileNavigationOverLay,
 	MobileNavigation,
 	MobileSocialLinks,
-	Icon,
 	MobileSocialIcon,
 } from './style'
 import MenuCloseIcon from '../../assets/menu-close.svg'
@@ -43,6 +42,7 @@ const Header: React.FunctionComponent = () => {
 			<Navigation>
 				<NavLink to="/">Welcome</NavLink>
 				<NavLink to="/projects">Projects</NavLink>
+				<NavLink to="/blogs">Blogs</NavLink>
 			</Navigation>
 			<LogoText to="/">Huy Trinh</LogoText>
 			<SocialLinks>
@@ -71,6 +71,7 @@ const Header: React.FunctionComponent = () => {
 				<MobileNavigation>
 					<NavLink to="/">Welcome</NavLink>
 					<NavLink to="/projects">Projects</NavLink>
+					<NavLink to="/blogs">Blogs</NavLink>
 				</MobileNavigation>
 				<MobileSocialLinks>
 					<MobileSocialIcon src={GithubIcon} />
