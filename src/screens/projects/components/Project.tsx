@@ -10,6 +10,7 @@ import {
 	ProjectTag,
 	ProjectDescription,
 	FeatureItem,
+	ButtonReadMore,
 } from './stlye'
 
 const Project = () => {
@@ -36,6 +37,7 @@ const Project = () => {
 							<FeatureItem>Networking</FeatureItem>
 							<FeatureItem>Animation and custom views</FeatureItem>
 						</FeatureList>
+						<ButtonReadMore href="">Read more</ButtonReadMore>
 					</ProjectContent>
 				</ProjectContentContainer>
 			</ProjectContainer>
