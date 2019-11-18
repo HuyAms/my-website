@@ -7,6 +7,9 @@ import {
 	ProjectContent,
 	FeatureList,
 	ProjectContainer,
+	ProjectTag,
+	ProjectDescription,
+	FeatureItem,
 } from './stlye'
 
 const Project = () => {
@@ -22,16 +25,16 @@ const Project = () => {
 				<ProjectContentContainer>
 					<ProjectContent>
 						<h2>Minida</h2>
-						<span>Ios</span>
-						<p>
+						<ProjectTag>Ios</ProjectTag>
+						<ProjectDescription>
 							Minida is a application where users can buy and sell secondhand
 							items
-						</p>
+						</ProjectDescription>
 						<FeatureList>
-							<li>MVP Architecture</li>
-							<li>FaceID/TouchID</li>
-							<li>Networking</li>
-							<li>Animation and custom views</li>
+							<FeatureItem>MVP Architecture</FeatureItem>
+							<FeatureItem>FaceID/TouchID</FeatureItem>
+							<FeatureItem>Networking</FeatureItem>
+							<FeatureItem>Animation and custom views</FeatureItem>
 						</FeatureList>
 					</ProjectContent>
 				</ProjectContentContainer>

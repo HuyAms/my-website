@@ -45,6 +45,23 @@ export const ProjectImage = styled.img`
 	max-height: 55rem;
 `
 
+export const ProjectTag = styled.span`
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-bottom: 1.2rem;
+	display: block;
+	color: ${props => props.theme.colors.gray};
+`
+
+export const ProjectDescription = styled.p`
+	margin-bottom: 2.4rem;
+`
+
 export const FeatureList = styled.ul`
-	list-style: none;
+	//list-style: none;
+	margin-left: 2rem;
+`
+
+export const FeatureItem = styled.li`
+	margin-bottom: 1rem;
 `
