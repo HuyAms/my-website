@@ -14,10 +14,6 @@ export const TechnicalSkillsContainer = styled.div`
 	${media.tabLand} {
 		grid-template-columns: repeat(3, 1fr);
 	}
-
-	${media.phone} {
-		grid-template-columns: repeat(2, 1fr);
-	}
 `
 
 export const TechnicalSkillsImage = styled.img`

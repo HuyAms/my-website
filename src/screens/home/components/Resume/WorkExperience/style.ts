@@ -10,11 +10,16 @@ export const WorkExperienceWrapper = styled.div`
 
 export const Title = styled.h3`
 	font-size: ${props => props.theme.fontSizes.lmd};
-	margin-bottom: 1rem;
 `
 
 export const Subtitle = styled.h4`
 	font-size: ${props => props.theme.fontSizes.md};
 	margin-bottom: 1.2rem;
 	text-transform: uppercase;
+`
+
+export const Time = styled.span`
+	font-weight: 300;
+	margin-bottom: 2.4rem;
+	display: block;
 `

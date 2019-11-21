@@ -27,14 +27,17 @@ export const homeReducer = (state = initialState, action: AnyAction) =>
 			case actionTypes.FETCH_HOME_CONTENT_START:
 				draft.error = null
 				draft.isLoading = true
+				break
 			case actionTypes.FETCH_HOME_CONTENT_SUCCESS:
 				draft.data = action.payload
 				draft.error = null
 				draft.isLoading = false
+				break
 			case actionTypes.FETCH_HOME_CONTENT_FAIL:
 				draft.data = action.payload
 				draft.error = action.error
 				draft.isLoading = false
+				break
 		}
 	})
 

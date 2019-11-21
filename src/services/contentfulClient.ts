@@ -1,13 +1,13 @@
 import {ContentfulClientApi, createClient} from 'contentful'
 
 const client: ContentfulClientApi = createClient({
-	space: '0q01fldk5izx',
-	accessToken: 'V3d6DzTlI0JDDXUHC40uq5CIjX49UWH7bbxQE3TWGZ4',
+	space: process.env.REACT_APP_CONTENTFUL_SPACE || '',
+	accessToken: process.env.REACT_APP_ACCESS_TOKEN || '',
 	host: 'cdn.contentful.com',
 })
 
-export const getEntry = (entryId: string) => {
-	return client.getEntry(entryId).then(payload => {
+export const getEntry = (entryId: string, query?: any) => {
+	return client.getEntry(entryId, query).then(payload => {
 		return payload.fields
 	})
 }

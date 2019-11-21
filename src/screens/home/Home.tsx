@@ -3,7 +3,7 @@ import {RouteComponentProps} from '@reach/router'
 import {connect} from 'react-redux'
 import BannerImage from '../../assets/banner.jpg'
 import TechnicalSkills from './components/TechnicalSkills/TechnicalSkills'
-import Resume from './components/Resume/Resume'
+import Resume, {ResumeItem} from './components/Resume/Resume'
 import Fact from './components/Fact/Fact'
 import Contact from './components/Contact/Contact'
 import Banner from '../../components/Banner/Banner'
@@ -11,32 +11,71 @@ import {getHomeContent} from '../../store/homeReducer'
 
 interface Props extends RouteComponentProps {
 	getHomeContent: () => any
+	home
 }
 
-const mockHomeBanner = {
-	content:
-		'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sodales eget leo et dignissim. Proin tincidunt lacus lacinia turpis gravida hendrerit',
-	imgUrl: BannerImage,
-}
-
-const Home: React.FC<Props> = ({getHomeContent}) => {
+const Home: React.FC<Props> = ({getHomeContent, home}) => {
 	React.useEffect(() => {
 		getHomeContent()
 	}, [])
 
-	return (
-		<>
-			<Banner text={mockHomeBanner.content} imageUrl={mockHomeBanner.imgUrl} />
-			<TechnicalSkills />
-			<Resume />
-			<Fact />
-			<Contact />
-		</>
-	)
+	const renderHomePage = () => {
+		if (home.isLoading || !home.data) {
+			return 'Loading'
+		}
+
+		const homeBannerData = home.data.hero.fields
+
+		const technicalSkillsData = home.data.sections[0].fields
+		const techincalSkillImgs = technicalSkillsData.images.map(
+			image => image.fields.file.url,
+		)
+
+		const workExpData = home.data.sections[1].fields
+		const educationExpData = home.data.sections[2].fields
+
+		const resumeData: ResumeItem[] = [workExpData, educationExpData].map(
+			data => {
+				return {
+					heading: data.heading,
+					workExps: data.experiences.map(exp => ({
+						title: exp.fields.title,
+						subtitle: exp.fields.subtitle,
+						description: exp.fields.description,
+						start: exp.fields.start,
+						end: exp.fields.end,
+					})),
+				}
+			},
+		)
+
+		return (
+			<>
+				<Banner
+					text={homeBannerData.heading}
+					imageUrl={homeBannerData.image.fields.file.url}
+				/>
+				<TechnicalSkills
+					heading={technicalSkillsData.heading}
+					subheading={technicalSkillsData.description}
+					imgSources={techincalSkillImgs}
+				/>
+				<Resume resumeItems={resumeData} />
+				<Fact />
+				<Contact />
+			</>
+		)
+	}
+
+	return <>{renderHomePage()}</>
+}
+
+const mapStateToProps = ({home}) => {
+	return {home}
 }
 
 const mapDispatchToProps = {
 	getHomeContent,
 }
 
-export default connect(null, mapDispatchToProps)(Home)
+export default connect(mapStateToProps, mapDispatchToProps)(Home)
