@@ -38,3 +38,13 @@ export const ContactInfo = styled.div`
 export const ContactTitle = styled.span`
 	font-weight: bold;
 `
+
+export const ContactLink = styled.a`
+	text-decoration: none;
+
+	color: ${props => props.theme.colors.gray};
+
+	&:hover {
+		color: ${props => props.theme.colors.black};
+	}
+`

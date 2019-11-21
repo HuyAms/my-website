@@ -48,8 +48,18 @@ const Header: React.FunctionComponent = () => {
 			</Navigation>
 			<LogoText to="/">Huy Trinh</LogoText>
 			<SocialLinks>
-				<SocialLinkItem href="https://github.com/HuyAms">Github</SocialLinkItem>
-				<SocialLinkItem href="https://www.linkedin.com/in/huy-trinh-dinh-253534131/">
+				<SocialLinkItem
+					target="_blank"
+					rel="noopener noreferrer"
+					href="https://github.com/HuyAms"
+				>
+					Github
+				</SocialLinkItem>
+				<SocialLinkItem
+					target="_blank"
+					rel="noopener noreferrer"
+					href="https://www.linkedin.com/in/huy-trinh-dinh-253534131/"
+				>
 					LinkedIn
 				</SocialLinkItem>
 				<SocialLinkItem href="https://www.linkedin.com/in/huy-trinh-dinh-253534131/">

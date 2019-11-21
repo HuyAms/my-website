@@ -1,7 +1,6 @@
 import React from 'react'
 import {RouteComponentProps} from '@reach/router'
 import {connect} from 'react-redux'
-import BannerImage from '../../assets/banner.jpg'
 import TechnicalSkills from './components/TechnicalSkills/TechnicalSkills'
 import Resume, {ResumeItem} from './components/Resume/Resume'
 import Fact from './components/Fact/Fact'
@@ -24,13 +23,16 @@ const Home: React.FC<Props> = ({getHomeContent, home}) => {
 			return 'Loading'
 		}
 
+		// Banner
 		const homeBannerData = home.data.hero.fields
 
+		// Technical skills
 		const technicalSkillsData = home.data.sections[0].fields
 		const techincalSkillImgs = technicalSkillsData.images.map(
 			image => image.fields.file.url,
 		)
 
+		// Experience
 		const workExpData = home.data.sections[1].fields
 		const educationExpData = home.data.sections[2].fields
 
@@ -49,6 +51,12 @@ const Home: React.FC<Props> = ({getHomeContent, home}) => {
 			},
 		)
 
+		// Fun Fact
+		const funFactData = home.data.sections[3].fields
+
+		// Contact
+		const contactData = home.data.sections[4].fields
+
 		return (
 			<>
 				<Banner
@@ -61,8 +69,18 @@ const Home: React.FC<Props> = ({getHomeContent, home}) => {
 					imgSources={techincalSkillImgs}
 				/>
 				<Resume resumeItems={resumeData} />
-				<Fact />
-				<Contact />
+				<Fact
+					heading={funFactData.heading}
+					content={funFactData.description}
+					imageUrl={funFactData.image.fields.file.url}
+				/>
+				<Contact
+					address={contactData.address}
+					email={contactData.email}
+					heading={contactData.heading}
+					socialMedia={contactData.socialMedia}
+					mapUrl={contactData.mapUrl}
+				/>
 			</>
 		)
 	}

@@ -7,31 +7,54 @@ import {
 	ContactInfo,
 	Map,
 	ContactTitle,
+	ContactLink,
 } from './style'
 import Container from '../../../../components/Container/Container'
 
-const Contact = () => {
+interface Props {
+	address: string
+	email: string
+	heading: string
+	socialMedia: string
+	mapUrl: string
+}
+
+const Contact: React.FunctionComponent<Props> = ({
+	address,
+	email,
+	heading,
+	socialMedia,
+	mapUrl,
+}) => {
 	return (
 		<ContactWrapper>
 			<Container>
 				<ContactSection>
 					<ContactHeader>
-						<h2>Let's work together</h2>
+						<h2>{heading}</h2>
 					</ContactHeader>
 					<ContactContent>
 						<ContactInfo>
 							<p>
-								<ContactTitle>Address:</ContactTitle> Kilonrinne 10F 140, 02610,
-								Espoo, Finland
+								<ContactTitle>Address: </ContactTitle>
+								{address}
 							</p>
 							<p>
-								<ContactTitle>Email:</ContactTitle> dinhhuyams@gmail.com
+								<ContactTitle>Email: </ContactTitle>
+								{email}
 							</p>
 							<p>
-								<ContactTitle>LinkedIn:</ContactTitle> Trinh Dinh Huy
+								<ContactTitle>LinkedIn: </ContactTitle>
+								<ContactLink
+									href={socialMedia}
+									rel="noopener noreferrer"
+									target="_blank"
+								>
+									Huy Trinh
+								</ContactLink>
 							</p>
 						</ContactInfo>
-						<Map title="map" frameBorder="0" src={''} allowFullScreen></Map>
+						<Map title="map" frameBorder="0" src={mapUrl} allowFullScreen></Map>
 					</ContactContent>
 				</ContactSection>
 			</Container>
