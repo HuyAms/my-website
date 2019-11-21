@@ -1,4 +1,5 @@
 import React from 'react'
+import './services/contentfulClient'
 import AppLayout from './layout/AppLayout'
 import Home from './screens/home/Home'
 import Projects from './screens/projects/Projects'

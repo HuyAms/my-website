@@ -1,5 +1,5 @@
 import React from 'react'
-import {Subtitle, Title, WorkExperienceWrapper} from './style'
+import {Subtitle, Time, Title, WorkExperienceWrapper} from './style'
 
 interface Props {
 	title: string
@@ -16,6 +16,7 @@ const WorkExperience: React.FunctionComponent<Props> = ({
 		<WorkExperienceWrapper>
 			<Subtitle>{subtitle}</Subtitle>
 			<Title>{title}</Title>
+			<Time>Sep 2012 - May 2015</Time>
 			<p>{description}</p>
 		</WorkExperienceWrapper>
 	)
