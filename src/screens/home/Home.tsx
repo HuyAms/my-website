@@ -1,13 +1,17 @@
 import React from 'react'
 import {RouteComponentProps} from '@reach/router'
+import {connect} from 'react-redux'
 import BannerImage from '../../assets/banner.jpg'
 import TechnicalSkills from './components/TechnicalSkills/TechnicalSkills'
 import Resume from './components/Resume/Resume'
 import Fact from './components/Fact/Fact'
 import Contact from './components/Contact/Contact'
 import Banner from '../../components/Banner/Banner'
+import {getHomeContent} from '../../store/homeReducer'
 
-interface Props extends RouteComponentProps {}
+interface Props extends RouteComponentProps {
+	getHomeContent: () => any
+}
 
 const mockHomeBanner = {
 	content:
@@ -15,7 +19,11 @@ const mockHomeBanner = {
 	imgUrl: BannerImage,
 }
 
-const Home: React.FC<Props> = () => {
+const Home: React.FC<Props> = ({getHomeContent}) => {
+	React.useEffect(() => {
+		getHomeContent()
+	}, [])
+
 	return (
 		<>
 			<Banner text={mockHomeBanner.content} imageUrl={mockHomeBanner.imgUrl} />
@@ -27,4 +35,8 @@ const Home: React.FC<Props> = () => {
 	)
 }
 
-export default Home
+const mapDispatchToProps = {
+	getHomeContent,
+}
+
+export default connect(null, mapDispatchToProps)(Home)
