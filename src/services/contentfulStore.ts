@@ -8,6 +8,10 @@ export const getProjectsScreenEntry = () => {
 	return getEntry('5F5eFgPo8dUgHpqpVAYXlQ')
 }
 
+export const getBlogScreenEntry = () => {
+	return getEntry('4TbRnIGtE1IuNezkrf6tqs')
+}
+
 export const getProjectsEntry = () => {
 	return getEntries({content_type: 'project'})
 }

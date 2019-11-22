@@ -1,23 +1,46 @@
 import React from 'react'
 import {RouteComponentProps} from '@reach/router'
-import BannerImage from '../../assets/banner.jpg'
 import Banner from '../../components/Banner/Banner'
+import {connect} from 'react-redux'
+import {getBlogScreen} from '../../store/blogScreenReducer'
 
-const mockBlogsBanner = {
-	content:
-		'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sodales eget leo et dignissim. Proin tincidunt lacus lacinia turpis gravida hendrerit',
-	imgUrl: BannerImage,
+interface Props extends RouteComponentProps {
+	getBlogScreen: () => any
+	blogScreen
 }
 
-const Blog: React.FunctionComponent<RouteComponentProps> = () => {
-	return (
-		<>
-			<Banner
-				text={mockBlogsBanner.content}
-				imageUrl={mockBlogsBanner.imgUrl}
-			/>
-		</>
-	)
+const Blog: React.FC<Props> = ({blogScreen, getBlogScreen}) => {
+	React.useEffect(() => {
+		getBlogScreen()
+	}, [])
+
+	const renderBlogPage = () => {
+		if (blogScreen.isLoading || !blogScreen.data) {
+			return 'Loading'
+		}
+
+		// Banner
+		const blogBannerData = blogScreen.data.hero.fields
+
+		return (
+			<>
+				<Banner
+					text={blogBannerData.heading}
+					imageUrl={blogBannerData.image.fields.file.url}
+				/>
+			</>
+		)
+	}
+
+	return <>{renderBlogPage()}</>
 }
 
-export default Blog
+const mapStateToProps = ({blogScreen}) => {
+	return {blogScreen}
+}
+
+const mapDispatchToProps = {
+	getBlogScreen,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Blog)

@@ -33,8 +33,6 @@ const Projects: React.FC<Props> = ({
 		// Banner
 		const projectsBannerData = projectScreen.data.hero.fields
 
-		console.log('PROJECTs: ', projects)
-
 		const renderProjects = () => {
 			if (projects.isLoading && !projects.data) {
 				return null
