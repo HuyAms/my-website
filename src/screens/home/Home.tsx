@@ -10,31 +10,31 @@ import {getHomeContent} from '../../store/homeReducer'
 
 interface Props extends RouteComponentProps {
 	getHomeContent: () => any
-	home
+	homeScreen
 }
 
-const Home: React.FC<Props> = ({getHomeContent, home}) => {
+const Home: React.FC<Props> = ({getHomeContent, homeScreen}) => {
 	React.useEffect(() => {
 		getHomeContent()
 	}, [])
 
 	const renderHomePage = () => {
-		if (home.isLoading || !home.data) {
+		if (homeScreen.isLoading || !homeScreen.data) {
 			return 'Loading'
 		}
 
 		// Banner
-		const homeBannerData = home.data.hero.fields
+		const homeBannerData = homeScreen.data.hero.fields
 
 		// Technical skills
-		const technicalSkillsData = home.data.sections[0].fields
+		const technicalSkillsData = homeScreen.data.sections[0].fields
 		const techincalSkillImgs = technicalSkillsData.images.map(
 			image => image.fields.file.url,
 		)
 
 		// Experience
-		const workExpData = home.data.sections[1].fields
-		const educationExpData = home.data.sections[2].fields
+		const workExpData = homeScreen.data.sections[1].fields
+		const educationExpData = homeScreen.data.sections[2].fields
 
 		const resumeData: ResumeItem[] = [workExpData, educationExpData].map(
 			data => {
@@ -52,10 +52,10 @@ const Home: React.FC<Props> = ({getHomeContent, home}) => {
 		)
 
 		// Fun Fact
-		const funFactData = home.data.sections[3].fields
+		const funFactData = homeScreen.data.sections[3].fields
 
 		// Contact
-		const contactData = home.data.sections[4].fields
+		const contactData = homeScreen.data.sections[4].fields
 
 		return (
 			<>
@@ -88,8 +88,8 @@ const Home: React.FC<Props> = ({getHomeContent, home}) => {
 	return <>{renderHomePage()}</>
 }
 
-const mapStateToProps = ({home}) => {
-	return {home}
+const mapStateToProps = ({homeScreen}) => {
+	return {homeScreen}
 }
 
 const mapDispatchToProps = {

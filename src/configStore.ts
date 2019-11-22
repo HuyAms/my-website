@@ -10,7 +10,7 @@ declare global {
 }
 
 const rootReducer = combineReducers({
-	home: homeReducer,
+	homeScreen: homeReducer,
 	projectScreen: projectsScreenReducer,
 })
 
