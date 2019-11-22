@@ -17,6 +17,7 @@ interface Props {
 	heading: string
 	socialMedia: string
 	mapUrl: string
+	phoneNumber: string
 }
 
 const Contact: React.FunctionComponent<Props> = ({
@@ -24,6 +25,7 @@ const Contact: React.FunctionComponent<Props> = ({
 	email,
 	heading,
 	socialMedia,
+	phoneNumber,
 	mapUrl,
 }) => {
 	return (
@@ -41,7 +43,11 @@ const Contact: React.FunctionComponent<Props> = ({
 							</p>
 							<p>
 								<ContactTitle>Email: </ContactTitle>
-								{email}
+								<ContactLink href={`mailto:${email}`}>{email}</ContactLink>
+							</p>
+							<p>
+								<ContactTitle>Phone: </ContactTitle>
+								{phoneNumber}
 							</p>
 							<p>
 								<ContactTitle>LinkedIn: </ContactTitle>

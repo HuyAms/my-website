@@ -39,11 +39,5 @@ export const ContactTitle = styled.span`
 `
 
 export const ContactLink = styled.a`
-	text-decoration: none;
-
-	color: ${props => props.theme.colors.gray};
-
-	&:hover {
-		color: ${props => props.theme.colors.black};
-	}
+	color: ${props => props.theme.colors.black};
 `

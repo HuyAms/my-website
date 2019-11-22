@@ -77,6 +77,7 @@ const Home: React.FC<Props> = ({getHomeContent, homeScreen}) => {
 				<Contact
 					address={contactData.address}
 					email={contactData.email}
+					phoneNumber={contactData.phone}
 					heading={contactData.heading}
 					socialMedia={contactData.socialMedia}
 					mapUrl={contactData.mapUrl}
