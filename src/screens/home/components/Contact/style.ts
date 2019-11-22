@@ -28,6 +28,10 @@ export const Map = styled.iframe`
 	width: 500px;
 	height: 350px;
 	display: block;
+
+	${media.phone} {
+		width: 100%;
+	}
 `
 
 export const ContactInfo = styled.div`

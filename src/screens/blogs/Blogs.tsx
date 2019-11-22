@@ -1,23 +1,81 @@
 import React from 'react'
 import {RouteComponentProps} from '@reach/router'
-import BannerImage from '../../assets/banner.jpg'
 import Banner from '../../components/Banner/Banner'
+import {connect} from 'react-redux'
+import {getBlogScreen} from '../../store/blogScreenReducer'
+import {getBlogs} from '../../store/blogsReducer'
+import Blog from './components/Blog'
+import {BlogList} from './style'
 
-const mockBlogsBanner = {
-	content:
-		'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sodales eget leo et dignissim. Proin tincidunt lacus lacinia turpis gravida hendrerit',
-	imgUrl: BannerImage,
+interface Props extends RouteComponentProps {
+	getBlogScreen: () => any
+	getBlogs: () => any
+	blogScreen
+	blogs
 }
 
-const Blog: React.FunctionComponent<RouteComponentProps> = () => {
-	return (
-		<>
-			<Banner
-				text={mockBlogsBanner.content}
-				imageUrl={mockBlogsBanner.imgUrl}
-			/>
-		</>
-	)
+const Blogs: React.FC<Props> = ({
+	blogScreen,
+	getBlogScreen,
+	getBlogs,
+	blogs,
+}) => {
+	React.useEffect(() => {
+		getBlogScreen()
+		getBlogs()
+	}, [])
+
+	const renderBlogPage = () => {
+		if (blogScreen.isLoading || !blogScreen.data) {
+			return 'Loading'
+		}
+
+		// Banner
+		const blogBannerData = blogScreen.data.hero.fields
+
+		const renderBlogList = () => {
+			if (!blogs.isLoading && blogs.data) {
+				return (
+					<BlogList>
+						{blogs.data.map(blog => {
+							const {title, link, author, thumbnail, categories} = blog
+
+							return (
+								<Blog
+									heading={title}
+									coverImageUrl={thumbnail}
+									author={author}
+									tags={categories}
+									readMoreUrl={link}
+								/>
+							)
+						})}
+					</BlogList>
+				)
+			}
+		}
+
+		return (
+			<>
+				<Banner
+					text={blogBannerData.heading}
+					imageUrl={blogBannerData.image.fields.file.url}
+				/>
+				<div>{renderBlogList()}</div>
+			</>
+		)
+	}
+
+	return <>{renderBlogPage()}</>
 }
 
-export default Blog
+const mapStateToProps = ({blogScreen, blogs}) => {
+	return {blogScreen, blogs}
+}
+
+const mapDispatchToProps = {
+	getBlogScreen,
+	getBlogs,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Blogs)
