@@ -1,20 +1,18 @@
 import produce from 'immer'
 import {AnyAction, Dispatch} from 'redux'
 import {createAction} from './util'
-import {getHomeEntry} from '../services/contentfulStore'
+import {getProjectsEntry} from '../services/contentfulStore'
 
 const actionTypes = {
-	FETCH_PROJECTS_SCREEN_START: 'FETCH_PROJECTS_SCREEN_START',
-	FETCH_PROJECTS_SCREEN_SUCCESS: 'FETCH_PROJECTS_SCREEN_SUCCESS',
-	FETCH_PROJECTS_SCREEN_FAIL: 'FETCH_PROJECTS_SCREEN_FAIL',
+	FETCH_PROJECTS_START: 'FETCH_PROJECTS_START',
+	FETCH_PROJECTS_SUCCESS: 'FETCH_PROJECTS_SUCCESS',
+	FETCH_PROJECTS_FAIL: 'FETCH_PROJECTS_FAIL',
 }
 
 const actions = {
-	getProjectsScreenStart: createAction(actionTypes.FETCH_PROJECTS_SCREEN_START),
-	getProjectsScreenSuccess: createAction(
-		actionTypes.FETCH_PROJECTS_SCREEN_SUCCESS,
-	),
-	getProjectScreentFail: createAction(actionTypes.FETCH_PROJECTS_SCREEN_FAIL),
+	getProjectsStart: createAction(actionTypes.FETCH_PROJECTS_START),
+	getProjectsSuccess: createAction(actionTypes.FETCH_PROJECTS_SUCCESS),
+	getProjectFail: createAction(actionTypes.FETCH_PROJECTS_FAIL),
 }
 
 const initialState = {
@@ -23,22 +21,19 @@ const initialState = {
 	error: null,
 }
 
-export const projectsScreenReducer = (
-	state = initialState,
-	action: AnyAction,
-) =>
+export const projectsReducer = (state = initialState, action: AnyAction) =>
 	produce(state, draft => {
 		switch (action.type) {
-			case actionTypes.FETCH_PROJECTS_SCREEN_START:
+			case actionTypes.FETCH_PROJECTS_START:
 				draft.error = null
 				draft.isLoading = true
 				break
-			case actionTypes.FETCH_PROJECTS_SCREEN_SUCCESS:
+			case actionTypes.FETCH_PROJECTS_SUCCESS:
 				draft.data = action.payload
 				draft.error = null
 				draft.isLoading = false
 				break
-			case actionTypes.FETCH_PROJECTS_SCREEN_FAIL:
+			case actionTypes.FETCH_PROJECTS_FAIL:
 				draft.data = action.payload
 				draft.error = action.error
 				draft.isLoading = false
@@ -46,12 +41,12 @@ export const projectsScreenReducer = (
 		}
 	})
 
-export const getProjectsScreen = () => (dispatch: Dispatch) => {
-	dispatch(actions.getProjectsScreenStart())
+export const getProjects = () => (dispatch: Dispatch) => {
+	dispatch(actions.getProjectsStart())
 
-	getHomeEntry()
+	getProjectsEntry()
 		.then(data => {
-			dispatch(actions.getProjectsScreenSuccess(data))
+			dispatch(actions.getProjectsSuccess(data))
 		})
-		.catch(error => dispatch(actions.getProjectScreentFail(error)))
+		.catch(error => dispatch(actions.getProjectFail(error)))
 }

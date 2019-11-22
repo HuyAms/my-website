@@ -11,3 +11,9 @@ export const getEntry = (entryId: string, query?: any) => {
 		return payload.fields
 	})
 }
+
+export const getEntries = (query?: any) => {
+	return client.getEntries(query).then(payload => {
+		return payload.items
+	})
+}

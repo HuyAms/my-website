@@ -1,7 +1,7 @@
 import produce from 'immer'
 import {AnyAction, Dispatch} from 'redux'
 import {createAction} from './util'
-import {getHomeEntry} from '../services/contentfulStore'
+import {getHomeScreenEntry} from '../services/contentfulStore'
 
 const actionTypes = {
 	FETCH_HOME_CONTENT_START: 'FETCH_HOME_CONTENT_START',
@@ -21,7 +21,7 @@ const initialState = {
 	error: null,
 }
 
-export const homeReducer = (state = initialState, action: AnyAction) =>
+export const homeScreenReducer = (state = initialState, action: AnyAction) =>
 	produce(state, draft => {
 		switch (action.type) {
 			case actionTypes.FETCH_HOME_CONTENT_START:
@@ -44,7 +44,7 @@ export const homeReducer = (state = initialState, action: AnyAction) =>
 export const getHomeContent = () => (dispatch: Dispatch) => {
 	dispatch(actions.getHomeContentStart())
 
-	getHomeEntry()
+	getHomeScreenEntry()
 		.then(data => {
 			dispatch(actions.getHomeContentSuccess(data))
 		})

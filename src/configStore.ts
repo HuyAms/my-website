@@ -1,7 +1,8 @@
 import {createStore, applyMiddleware, compose, combineReducers} from 'redux'
-import {homeReducer} from './store/homeReducer'
+import {homeScreenReducer} from './store/homeScreenReducer'
 import thunk from 'redux-thunk'
-import {projectsScreenReducer} from './store/projectsReducer'
+import {projectsScreenReducer} from './store/projectsScreenReducer'
+import {projectsReducer} from './store/projectsReducer'
 
 declare global {
 	interface Window {
@@ -10,8 +11,9 @@ declare global {
 }
 
 const rootReducer = combineReducers({
-	homeScreen: homeReducer,
+	homeScreen: homeScreenReducer,
 	projectScreen: projectsScreenReducer,
+	projects: projectsReducer,
 })
 
 const configureStore = (preloadedState?: any) => {

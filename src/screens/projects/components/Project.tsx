@@ -13,31 +13,40 @@ import {
 	ButtonReadMore,
 } from './stlye'
 
-const Project = () => {
+interface Props {
+	title: string
+	type: string
+	imageUrl: string
+	description: string
+	readMore: string
+	features: string[]
+}
+
+const Project: React.FunctionComponent<Props> = props => {
+	const {title, type, imageUrl, description, readMore, features} = props
 	return (
 		<ProjectWrapper>
 			<ProjectContainer>
 				<ProjectImageContainer>
-					<ProjectImage
-						src="https://user-images.githubusercontent.com/26871154/41097444-98b8ec94-6a60-11e8-9f4b-4c396adf1de9.png"
-						alt=""
-					/>
+					<ProjectImage src={imageUrl} />
 				</ProjectImageContainer>
 				<ProjectContentContainer>
 					<ProjectContent>
-						<h2>Minida</h2>
-						<ProjectTag>Ios</ProjectTag>
-						<ProjectDescription>
-							Minida is a application where users can buy and sell secondhand
-							items
-						</ProjectDescription>
+						<h2>{title}</h2>
+						<ProjectTag>{type}</ProjectTag>
+						<ProjectDescription>{description}</ProjectDescription>
 						<FeatureList>
-							<FeatureItem>MVP Architecture</FeatureItem>
-							<FeatureItem>FaceID/TouchID</FeatureItem>
-							<FeatureItem>Networking</FeatureItem>
-							<FeatureItem>Animation and custom views</FeatureItem>
+							{features.map(feature => (
+								<FeatureItem key={feature}>{feature}</FeatureItem>
+							))}
 						</FeatureList>
-						<ButtonReadMore href="">Read more</ButtonReadMore>
+						<ButtonReadMore
+							rel="noopener noreferrer"
+							target="_blank"
+							href={readMore}
+						>
+							Read more
+						</ButtonReadMore>
 					</ProjectContent>
 				</ProjectContentContainer>
 			</ProjectContainer>

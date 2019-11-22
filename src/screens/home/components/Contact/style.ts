@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import {media} from '../../../../styles/utils'
-import Container from '../../../../components/Container/Container'
 
 export const ContactWrapper = styled.section`
 	padding: 9.6rem 1rem;

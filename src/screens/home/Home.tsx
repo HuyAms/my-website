@@ -6,7 +6,7 @@ import Resume, {ResumeItem} from './components/Resume/Resume'
 import Fact from './components/Fact/Fact'
 import Contact from './components/Contact/Contact'
 import Banner from '../../components/Banner/Banner'
-import {getHomeContent} from '../../store/homeReducer'
+import {getHomeContent} from '../../store/homeScreenReducer'
 
 interface Props extends RouteComponentProps {
 	getHomeContent: () => any
