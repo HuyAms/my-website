@@ -1,6 +1,7 @@
 import {createStore, applyMiddleware, compose, combineReducers} from 'redux'
 import {homeReducer} from './store/homeReducer'
 import thunk from 'redux-thunk'
+import {projectsScreenReducer} from './store/projectsReducer'
 
 declare global {
 	interface Window {
@@ -10,6 +11,7 @@ declare global {
 
 const rootReducer = combineReducers({
 	home: homeReducer,
+	projectScreen: projectsScreenReducer,
 })
 
 const configureStore = (preloadedState?: any) => {

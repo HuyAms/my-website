@@ -2,27 +2,53 @@ import React from 'react'
 import {RouteComponentProps} from '@reach/router'
 import Project from './components/Project'
 import Banner from '../../components/Banner/Banner'
-import BannerImage from '../../assets/banner.jpg'
 import {ProjectListWrapper} from './style'
+import {getProjectsScreen} from '../../store/projectsReducer'
+import {connect} from 'react-redux'
 
-const mockHomeBanner = {
-	content:
-		'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sodales eget leo et dignissim. Proin tincidunt lacus lacinia turpis gravida hendrerit',
-	imgUrl: BannerImage,
+interface Props extends RouteComponentProps {
+	getProjectsScreen: () => any
+	projectScreen
 }
 
-const Projects: React.FC<RouteComponentProps> = () => {
-	return (
-		<>
-			<Banner text={mockHomeBanner.content} imageUrl={mockHomeBanner.imgUrl} />
-			<ProjectListWrapper>
-				<Project />
-				<Project />
-				<Project />
-				<Project />
-			</ProjectListWrapper>
-		</>
-	)
+const Projects: React.FC<Props> = ({projectScreen, getProjectsScreen}) => {
+	React.useEffect(() => {
+		getProjectsScreen()
+	}, [])
+
+	const renderProjectsPage = () => {
+		if (projectScreen.isLoading || !projectScreen.data) {
+			return 'Loading'
+		}
+
+		// Banner
+		const projectsBannerData = projectScreen.data.hero.fields
+
+		return (
+			<>
+				<Banner
+					text={projectsBannerData.heading}
+					imageUrl={projectsBannerData.image.fields.file.url}
+				/>
+				<ProjectListWrapper>
+					<Project />
+					<Project />
+					<Project />
+					<Project />
+				</ProjectListWrapper>
+			</>
+		)
+	}
+
+	return <>{renderProjectsPage()}</>
 }
 
-export default Projects
+const mapStateToProps = ({projectScreen}) => {
+	return {projectScreen}
+}
+
+const mapDispatchToProps = {
+	getProjectsScreen,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Projects)
