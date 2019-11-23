@@ -69,6 +69,10 @@ const Header: React.FunctionComponent = () => {
 		</HeaderWrapper>
 	)
 
+	const onMobileMenuClick = () => {
+		setNavShow(false)
+	}
+
 	const renderMobileHeader = () => (
 		<HeaderMobileWraper>
 			<LogoText to="/">Huy Trinh</LogoText>
@@ -84,9 +88,15 @@ const Header: React.FunctionComponent = () => {
 					alt="Menu icon"
 				/>
 				<MobileNavigation>
-					<NavLink to="/">Welcome</NavLink>
-					<NavLink to="/projects">Projects</NavLink>
-					<NavLink to="/blogs">Blogs</NavLink>
+					<NavLink onClick={onMobileMenuClick} to="/">
+						Welcome
+					</NavLink>
+					<NavLink onClick={onMobileMenuClick} to="/projects">
+						Projects
+					</NavLink>
+					<NavLink onClick={onMobileMenuClick} to="/blogs">
+						Blogs
+					</NavLink>
 				</MobileNavigation>
 				<MobileSocialLinks>
 					<MobileSocialIcon
