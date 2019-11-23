@@ -10,7 +10,6 @@ import {
 	Tag,
 } from './style'
 import ButtonLink from '../../../components/ButtonLink/ButtonLink'
-import {ButtonLinkWrapper} from '../../../components/ButtonLink/style'
 
 interface Props {
 	heading: string
