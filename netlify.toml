@@ -1,0 +1,4 @@
+[build]
+base = "my-website/"
+publish = "my-website/build/"
+command = "yarn build"
