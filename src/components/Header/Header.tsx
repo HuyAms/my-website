@@ -62,7 +62,7 @@ const Header: React.FunctionComponent = () => {
 				>
 					LinkedIn
 				</SocialLinkItem>
-				<SocialLinkItem href="https://www.linkedin.com/in/huy-trinh-dinh-253534131/">
+				<SocialLinkItem href="mailto:dinhhuyams@gmail.com">
 					Contact
 				</SocialLinkItem>
 			</SocialLinks>
@@ -89,13 +89,21 @@ const Header: React.FunctionComponent = () => {
 					<NavLink to="/blogs">Blogs</NavLink>
 				</MobileNavigation>
 				<MobileSocialLinks>
-					<MobileSocialIcon href="">
+					<MobileSocialIcon
+						target="_blank"
+						rel="noopener noreferrer"
+						href="https://github.com/HuyAms"
+					>
 						<Icon src={GithubIcon} />
 					</MobileSocialIcon>
-					<MobileSocialIcon href="">
+					<MobileSocialIcon
+						target="_blank"
+						rel="noopener noreferrer"
+						href="https://www.linkedin.com/in/huy-trinh-dinh-253534131/"
+					>
 						<Icon src={LinkedInIcon} />
 					</MobileSocialIcon>
-					<MobileSocialIcon href="">
+					<MobileSocialIcon href="mailto:dinhhuyams@gmail.com">
 						<Icon src={MailIcon} />
 					</MobileSocialIcon>
 				</MobileSocialLinks>
