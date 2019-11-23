@@ -6,4 +6,4 @@ before_install:
   - docker build -t dinhhuyams/my-website -f Dockerfile.dev .
 
 script:
-  - docker run dinhhuyams/my-website npm run test -- --coverage
+  - docker run dinhhuyams/my-website npm run test -- --coverage --watchAll=false
