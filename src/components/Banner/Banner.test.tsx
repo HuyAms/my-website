@@ -1,8 +1,8 @@
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
 import faker from 'faker'
-import {render} from '@testing-library/react'
 import Banner from './Banner'
+import {render} from '../../utils/testUtil'
 
 const renderBanner = () => {
 	// Arrange
@@ -23,7 +23,7 @@ describe('<Banner/>', () => {
 		expect(getByText(mockBannerText)).toBeInTheDocument()
 	})
 
-	it('should render banner with correcxt img url', () => {
+	it('should render banner with correct img url', () => {
 		// Act
 		const {mockImgUrl, getByTestId} = renderBanner()
 

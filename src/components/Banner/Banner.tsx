@@ -2,19 +2,21 @@ import React from 'react'
 import {BannerImage, BannerText, BannerWrapper, ButtonContainer} from './style'
 import Container from '../Container/Container'
 import ButtonLink from '../ButtonLink/ButtonLink'
-import {useStore} from 'react-redux'
+import {connect} from 'react-redux'
 
 interface Props {
 	text: string
 	imageUrl: string
+	generalInfo
 }
 
-const Banner: React.FunctionComponent<Props> = ({text, imageUrl}) => {
-	const store = useStore()
-	const {generalInfo} = store.getState()
-
+const Banner: React.FunctionComponent<Props> = ({
+	text,
+	imageUrl,
+	generalInfo,
+}) => {
 	const renderDownloadCVButton = () => {
-		if (generalInfo.isLoading && !generalInfo.data) {
+		if (generalInfo.isLoading || !generalInfo.data) {
 			return null
 		}
 
@@ -41,4 +43,8 @@ const Banner: React.FunctionComponent<Props> = ({text, imageUrl}) => {
 	)
 }
 
-export default Banner
+const mapStateToProps = ({generalInfo}) => {
+	return {generalInfo}
+}
+
+export default connect(mapStateToProps)(Banner)
