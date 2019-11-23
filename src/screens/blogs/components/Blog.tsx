@@ -6,10 +6,10 @@ import {
 	BlogImage,
 	BlogTagList,
 	BlogWrapper,
-	ReadMore,
 	ReadMoreContainer,
 	Tag,
 } from './style'
+import ButtonLink from '../../../components/ButtonLink/ButtonLink'
 
 interface Props {
 	heading: string
@@ -28,7 +28,7 @@ const Blog: React.FunctionComponent<Props> = ({
 }) => {
 	return (
 		<BlogWrapper>
-			<a href={readMoreUrl} target="_blank">
+			<a rel="noopener noreferrer" href={readMoreUrl} target="_blank">
 				<BlogImage src={coverImageUrl} />
 			</a>
 			<BlogContent>
@@ -43,9 +43,9 @@ const Blog: React.FunctionComponent<Props> = ({
 				</BlogTagList>
 			</BlogContent>
 			<ReadMoreContainer>
-				<ReadMore target="_blank" href={readMoreUrl}>
+				<ButtonLink target="_blank" href={readMoreUrl}>
 					Read more
-				</ReadMore>
+				</ButtonLink>
 			</ReadMoreContainer>
 		</BlogWrapper>
 	)

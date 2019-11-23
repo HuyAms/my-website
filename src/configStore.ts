@@ -5,6 +5,7 @@ import {projectsScreenReducer} from './store/projectsScreenReducer'
 import {projectsReducer} from './store/projectsReducer'
 import {blogScreenReducer} from './store/blogScreenReducer'
 import {blogsReducer} from './store/blogsReducer'
+import {generalInfoReducer} from './store/generalInfoReducer'
 
 declare global {
 	interface Window {
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
 	blogScreen: blogScreenReducer,
 	projects: projectsReducer,
 	blogs: blogsReducer,
+	generalInfo: generalInfoReducer,
 })
 
 const configureStore = (preloadedState?: any) => {

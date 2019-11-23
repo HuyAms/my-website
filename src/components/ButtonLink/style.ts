@@ -9,6 +9,7 @@ export const ButtonLinkWrapper = styled.a`
 	text-transform: uppercase;
 	transition: all 0.2s;
 	font-weight: 400;
+	text-align: center;
 
 	&,
 	&:link,

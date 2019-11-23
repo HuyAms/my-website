@@ -6,6 +6,7 @@ import {getBlogScreen} from '../../store/blogScreenReducer'
 import {getBlogs} from '../../store/blogsReducer'
 import Blog from './components/Blog'
 import {BlogList} from './style'
+import PageSpinner from '../../components/Spinner/PageSpinner'
 
 interface Props extends RouteComponentProps {
 	getBlogScreen: () => any
@@ -21,13 +22,20 @@ const Blogs: React.FC<Props> = ({
 	blogs,
 }) => {
 	React.useEffect(() => {
-		getBlogScreen()
-		getBlogs()
-	}, [])
+		if (!blogScreen.data) {
+			getBlogScreen()
+		}
+	}, [blogScreen.data])
+
+	React.useEffect(() => {
+		if (!blogs.data) {
+			getBlogs()
+		}
+	}, [blogs.data])
 
 	const renderBlogPage = () => {
 		if (blogScreen.isLoading || !blogScreen.data) {
-			return 'Loading'
+			return <PageSpinner />
 		}
 
 		// Banner

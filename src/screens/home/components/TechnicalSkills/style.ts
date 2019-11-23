@@ -1,5 +1,7 @@
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 import {media} from '../../../../styles/utils'
+import {Link} from '@reach/router'
+import {ButtonLinkWrapper} from '../../../../components/ButtonLink/style'
 
 export const TechnicalSkillsWrapper = styled.section`
 	padding: 9.6rem 1rem;
@@ -29,4 +31,11 @@ export const TechnicalSkillsImage = styled.img`
 		opacity: 1;
 		transform: scale(1.2);
 	}
+`
+
+export const ButtonMyProject = styled(ButtonLinkWrapper)``
+
+export const ButtonContainer = styled.div`
+	text-align: center;
+	margin-top: 9.6rem;
 `

@@ -15,7 +15,11 @@ const HeaderText: React.FunctionComponent<Props> = ({
 	width,
 }) => {
 	return (
-		<HeaderTextContainer width={width} textCenter={textCenter}>
+		<HeaderTextContainer
+			data-testid="header-text"
+			width={width}
+			textCenter={textCenter}
+		>
 			<HeaderHeading>{heading}</HeaderHeading>
 			<p>{subheading}</p>
 		</HeaderTextContainer>

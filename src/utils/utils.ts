@@ -24,3 +24,24 @@ export const useWindowDimensions = () => {
 
 	return windowDimensions
 }
+
+export const formatDate = (date: Date): string => {
+	const d = new Date(date)
+
+	const monthNames = [
+		'Jan',
+		'Feb',
+		'Mar',
+		'Apr',
+		'May',
+		'June',
+		'July',
+		'Aug',
+		'Sep',
+		'Oct',
+		'Nov',
+		'Dec',
+	]
+
+	return monthNames[d.getMonth()] + ' ' + d.getFullYear().toString()
+}
