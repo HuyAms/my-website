@@ -7,6 +7,8 @@ import {
 } from './style'
 import Container from '../../../../components/Container/Container'
 import WorkExperience from './WorkExperience/WorkExperience'
+import {ButtonContainer, ButtonMyProject} from './style'
+import {Link} from '@reach/router'
 
 interface WorkExp {
 	title: string
@@ -48,7 +50,14 @@ const Resume: React.FunctionComponent<Props> = ({resumeItems}) => {
 
 	return (
 		<ResumeWrapper>
-			<Container>{renderResumeSections()}</Container>
+			<Container>
+				<div>{renderResumeSections()}</div>
+				<ButtonContainer>
+					<ButtonMyProject as={Link} to="/projects">
+						My Projects
+					</ButtonMyProject>
+				</ButtonContainer>
+			</Container>
 		</ResumeWrapper>
 	)
 }
