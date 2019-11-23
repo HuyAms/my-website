@@ -22,3 +22,8 @@ export const BannerImage = styled.div`
 	background-position: center;
 	background-attachment: fixed;
 `
+
+export const ButtonContainer = styled.div`
+	text-align: center;
+	margin-top: 4.8rem;
+`

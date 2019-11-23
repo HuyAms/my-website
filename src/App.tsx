@@ -10,7 +10,7 @@ const App: React.FC = () => {
 	return (
 		<AppLayout>
 			<Router primary={false}>
-				<Home path="/" />
+				<Home path="/" default={true} />
 				<Projects path="/projects" />
 				<Blogs path="/blogs" />
 			</Router>

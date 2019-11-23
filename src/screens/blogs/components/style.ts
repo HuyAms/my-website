@@ -56,8 +56,3 @@ export const ReadMoreContainer = styled.div`
 	margin-bottom: 2.4rem;
 	margin-top: 2.4rem;
 `
-
-export const ReadMore = styled(ButtonLinkWrapper)`
-	font-weight: 400;
-	text-align: center;
-`

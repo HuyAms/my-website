@@ -7,6 +7,7 @@ import Fact from './components/Fact/Fact'
 import Contact from './components/Contact/Contact'
 import Banner from '../../components/Banner/Banner'
 import {getHomeContent} from '../../store/homeScreenReducer'
+import PageSpinner from '../../components/Spinner/PageSpinner'
 
 interface Props extends RouteComponentProps {
 	getHomeContent: () => any
@@ -15,12 +16,14 @@ interface Props extends RouteComponentProps {
 
 const Home: React.FC<Props> = ({getHomeContent, homeScreen}) => {
 	React.useEffect(() => {
-		getHomeContent()
-	}, [])
+		if (!homeScreen.data) {
+			getHomeContent()
+		}
+	}, [homeScreen.data])
 
 	const renderHomePage = () => {
 		if (homeScreen.isLoading || !homeScreen.data) {
-			return 'Loading'
+			return <PageSpinner />
 		}
 
 		// Banner

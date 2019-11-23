@@ -8,7 +8,11 @@ interface Props {
 
 const ButtonLink: React.FunctionComponent<Props> = props => {
 	return (
-		<ButtonLinkWrapper target={props.target} rel="noopener" href={props.href}>
+		<ButtonLinkWrapper
+			target={props.target}
+			rel="noopener noreferrer"
+			href={props.href}
+		>
 			{props.children}
 		</ButtonLinkWrapper>
 	)
