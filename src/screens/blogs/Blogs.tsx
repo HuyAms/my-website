@@ -22,9 +22,16 @@ const Blogs: React.FC<Props> = ({
 	blogs,
 }) => {
 	React.useEffect(() => {
-		getBlogScreen()
-		getBlogs()
-	}, [])
+		if (!blogScreen.data) {
+			getBlogScreen()
+		}
+	}, [blogScreen.data])
+
+	React.useEffect(() => {
+		if (!blogs.data) {
+			getBlogs()
+		}
+	}, [blogs.data])
 
 	const renderBlogPage = () => {
 		if (blogScreen.isLoading || !blogScreen.data) {

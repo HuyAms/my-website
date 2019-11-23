@@ -16,8 +16,10 @@ interface Props extends RouteComponentProps {
 
 const Home: React.FC<Props> = ({getHomeContent, homeScreen}) => {
 	React.useEffect(() => {
-		getHomeContent()
-	}, [])
+		if (!homeScreen.data) {
+			getHomeContent()
+		}
+	}, [homeScreen.data])
 
 	const renderHomePage = () => {
 		if (homeScreen.isLoading || !homeScreen.data) {

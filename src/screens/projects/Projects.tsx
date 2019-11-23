@@ -22,9 +22,16 @@ const Projects: React.FC<Props> = ({
 	projects,
 }) => {
 	React.useEffect(() => {
-		getProjectsScreen()
-		getProjects()
-	}, [])
+		if (!projectScreen.data) {
+			getProjectsScreen()
+		}
+	}, [projectScreen.data])
+
+	React.useEffect(() => {
+		if (!projects.data) {
+			getProjects()
+		}
+	}, [projects.data])
 
 	const renderProjectsPage = () => {
 		if (projectScreen.isLoading || !projectScreen.data) {
