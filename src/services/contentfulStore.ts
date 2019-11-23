@@ -15,3 +15,7 @@ export const getBlogScreenEntry = () => {
 export const getProjectsEntry = () => {
 	return getEntries({content_type: 'project'})
 }
+
+export const getGeneralInfoEntry = () => {
+	return getEntry('4Pegz93N3Ab1H7IVTktGUF')
+}
