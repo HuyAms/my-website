@@ -1,8 +1,8 @@
 import {ContentfulClientApi, createClient} from 'contentful'
 
 const client: ContentfulClientApi = createClient({
-	space: process.env.REACT_APP_CONTENTFUL_SPACE || '',
-	accessToken: process.env.REACT_APP_ACCESS_TOKEN || '',
+	space: process.env.REACT_APP_CONTENTFUL_SPACE || 'test',
+	accessToken: process.env.REACT_APP_ACCESS_TOKEN || 'test',
 	host: 'cdn.contentful.com',
 })
 

@@ -33,7 +33,10 @@ const Banner: React.FunctionComponent<Props> = ({text, imageUrl}) => {
 					<ButtonContainer>{renderDownloadCVButton()}</ButtonContainer>
 				</Container>
 			</BannerWrapper>
-			<BannerImage style={{backgroundImage: `url(${imageUrl})`}}></BannerImage>
+			<BannerImage
+				data-testid="banner-image"
+				style={{backgroundImage: `url(${imageUrl})`}}
+			></BannerImage>
 		</>
 	)
 }
