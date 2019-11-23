@@ -6,6 +6,7 @@ import {ProjectListWrapper} from './style'
 import {getProjectsScreen} from '../../store/projectsScreenReducer'
 import {connect} from 'react-redux'
 import {getProjects} from '../../store/projectsReducer'
+import PageSpinner from '../../components/Spinner/PageSpinner'
 
 interface Props extends RouteComponentProps {
 	getProjectsScreen: () => any
@@ -27,7 +28,7 @@ const Projects: React.FC<Props> = ({
 
 	const renderProjectsPage = () => {
 		if (projectScreen.isLoading || !projectScreen.data) {
-			return 'Loading'
+			return <PageSpinner />
 		}
 
 		// Banner

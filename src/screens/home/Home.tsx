@@ -7,6 +7,7 @@ import Fact from './components/Fact/Fact'
 import Contact from './components/Contact/Contact'
 import Banner from '../../components/Banner/Banner'
 import {getHomeContent} from '../../store/homeScreenReducer'
+import PageSpinner from '../../components/Spinner/PageSpinner'
 
 interface Props extends RouteComponentProps {
 	getHomeContent: () => any
@@ -20,7 +21,7 @@ const Home: React.FC<Props> = ({getHomeContent, homeScreen}) => {
 
 	const renderHomePage = () => {
 		if (homeScreen.isLoading || !homeScreen.data) {
-			return 'Loading'
+			return <PageSpinner />
 		}
 
 		// Banner
