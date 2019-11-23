@@ -15,7 +15,10 @@ const Banner: React.FunctionComponent<Props> = ({text, imageUrl}) => {
 					<BannerText>{text}</BannerText>
 				</Container>
 			</BannerWrapper>
-			<BannerImage style={{backgroundImage: `url(${imageUrl})`}}></BannerImage>
+			<BannerImage
+				data-testid="banner-image"
+				style={{backgroundImage: `url(${imageUrl})`}}
+			></BannerImage>
 		</>
 	)
 }
