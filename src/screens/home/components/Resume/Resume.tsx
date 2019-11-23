@@ -14,8 +14,8 @@ interface WorkExp {
 	title: string
 	subtitle: string
 	description: string
-	start?: Date
-	end?: Date
+	start: Date
+	end: Date
 }
 
 export interface ResumeItem {
@@ -41,6 +41,8 @@ const Resume: React.FunctionComponent<Props> = ({resumeItems}) => {
 							title={exp.title}
 							subtitle={exp.subtitle}
 							description={exp.description}
+							start={exp.start}
+							end={exp.end}
 						/>
 					))}
 				</ResumeContent>
