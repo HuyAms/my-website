@@ -18,12 +18,28 @@ interface Props {
 	type: string
 	imageUrl: string
 	description: string
-	readMore: string
+	readMore?: string
 	features: string[]
 }
 
 const Project: React.FunctionComponent<Props> = props => {
 	const {title, type, imageUrl, description, readMore, features} = props
+
+	const renderReadMore = () => {
+		if (readMore) {
+			return (
+				<ButtonReadMore
+					rel="noopener noreferrer"
+					target="_blank"
+					href={readMore}
+				>
+					Read more
+				</ButtonReadMore>
+			)
+		}
+
+		return null
+	}
 	return (
 		<ProjectWrapper>
 			<ProjectContainer>
@@ -40,13 +56,7 @@ const Project: React.FunctionComponent<Props> = props => {
 								<FeatureItem key={feature}>{feature}</FeatureItem>
 							))}
 						</FeatureList>
-						<ButtonReadMore
-							rel="noopener noreferrer"
-							target="_blank"
-							href={readMore}
-						>
-							Read more
-						</ButtonReadMore>
+						{renderReadMore()}
 					</ProjectContent>
 				</ProjectContentContainer>
 			</ProjectContainer>
