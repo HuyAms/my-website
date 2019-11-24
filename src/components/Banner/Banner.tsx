@@ -22,7 +22,7 @@ const Banner: React.FunctionComponent<Props> = ({
 
 		return (
 			<ButtonLink target="_blank" href={generalInfo.data.cvUrl}>
-				Download My CV
+				View My CV
 			</ButtonLink>
 		)
 	}

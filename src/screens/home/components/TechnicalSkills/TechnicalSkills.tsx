@@ -32,7 +32,7 @@ const TechnicalSkills: React.FunctionComponent<Props> = ({
 				</TechnicalSkillsContainer>
 				<ButtonContainer>
 					<ButtonMyProject as={Link} to="/projects">
-						My Projects
+						Check My Projects
 					</ButtonMyProject>
 				</ButtonContainer>
 			</Container>

@@ -2,7 +2,7 @@ import React from 'react'
 import {RouteComponentProps} from '@reach/router'
 import Project from './components/Project'
 import Banner from '../../components/Banner/Banner'
-import {ProjectListWrapper} from './style'
+import {Header, ProjectListWrapper} from './style'
 import {getProjectsScreen} from '../../store/projectsScreenReducer'
 import {connect} from 'react-redux'
 import PageSpinner from '../../components/Spinner/PageSpinner'
@@ -60,6 +60,9 @@ const Projects: React.FC<Props> = ({projectScreen, getProjectsScreen}) => {
 					text={projectsBannerData.heading}
 					imageUrl={projectsBannerData.image.fields.file.url}
 				/>
+				<Header>
+					<h2>Total projects: {projectsData.length}</h2>
+				</Header>
 				<ProjectListWrapper>{renderProjects()}</ProjectListWrapper>
 			</>
 		)
