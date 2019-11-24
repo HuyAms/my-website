@@ -30,6 +30,7 @@ export const GlobalStyle = createGlobalStyle`
 		color: ${props => props.theme.appColors.text} ;
 		font-size: ${props => props.theme.fontSizes.md};
 		box-sizing: border-box;
+		background-color: red;
 	}
 	
 	h1 {
