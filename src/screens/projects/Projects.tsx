@@ -5,33 +5,19 @@ import Banner from '../../components/Banner/Banner'
 import {ProjectListWrapper} from './style'
 import {getProjectsScreen} from '../../store/projectsScreenReducer'
 import {connect} from 'react-redux'
-import {getProjects} from '../../store/projectsReducer'
 import PageSpinner from '../../components/Spinner/PageSpinner'
 
 interface Props extends RouteComponentProps {
 	getProjectsScreen: () => any
-	getProjects: () => any
 	projectScreen
-	projects
 }
 
-const Projects: React.FC<Props> = ({
-	projectScreen,
-	getProjectsScreen,
-	getProjects,
-	projects,
-}) => {
+const Projects: React.FC<Props> = ({projectScreen, getProjectsScreen}) => {
 	React.useEffect(() => {
 		if (!projectScreen.data) {
 			getProjectsScreen()
 		}
 	}, [projectScreen.data])
-
-	React.useEffect(() => {
-		if (!projects.data) {
-			getProjects()
-		}
-	}, [projects.data])
 
 	const renderProjectsPage = () => {
 		if (projectScreen.isLoading || !projectScreen.data) {
@@ -41,12 +27,11 @@ const Projects: React.FC<Props> = ({
 		// Banner
 		const projectsBannerData = projectScreen.data.hero.fields
 
-		const renderProjects = () => {
-			if (projects.isLoading && !projects.data) {
-				return null
-			}
+		// Projects
+		const projectsData = projectScreen.data.sections[0].fields.projects
 
-			return projects.data.map(data => {
+		const renderProjects = () => {
+			return projectsData.map(data => {
 				const {
 					title,
 					description,
@@ -83,13 +68,12 @@ const Projects: React.FC<Props> = ({
 	return <>{renderProjectsPage()}</>
 }
 
-const mapStateToProps = ({projectScreen, projects}) => {
-	return {projectScreen, projects}
+const mapStateToProps = ({projectScreen}) => {
+	return {projectScreen}
 }
 
 const mapDispatchToProps = {
 	getProjectsScreen,
-	getProjects,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Projects)

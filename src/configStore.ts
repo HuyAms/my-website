@@ -2,7 +2,6 @@ import {createStore, applyMiddleware, compose, combineReducers} from 'redux'
 import {homeScreenReducer} from './store/homeScreenReducer'
 import thunk from 'redux-thunk'
 import {projectsScreenReducer} from './store/projectsScreenReducer'
-import {projectsReducer} from './store/projectsReducer'
 import {blogScreenReducer} from './store/blogScreenReducer'
 import {blogsReducer} from './store/blogsReducer'
 import {generalInfoReducer} from './store/generalInfoReducer'
@@ -17,7 +16,6 @@ const rootReducer = combineReducers({
 	homeScreen: homeScreenReducer,
 	projectScreen: projectsScreenReducer,
 	blogScreen: blogScreenReducer,
-	projects: projectsReducer,
 	blogs: blogsReducer,
 	generalInfo: generalInfoReducer,
 })
