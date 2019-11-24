@@ -51,7 +51,7 @@ const Projects: React.FC<Props> = ({
 					title,
 					description,
 					type,
-					readMore,
+					readMore = null,
 					features,
 					image,
 				} = data.fields
