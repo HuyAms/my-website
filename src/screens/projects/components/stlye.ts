@@ -38,7 +38,7 @@ export const ProjectContentContainer = styled.div`
 `
 
 export const ProjectContent = styled.div`
-	width: 60%;
+	width: 90%;
 	margin: 0 auto;
 	padding: 1rem;
 
