@@ -56,7 +56,7 @@ const Resume: React.FunctionComponent<Props> = ({resumeItems}) => {
 				<div>{renderResumeSections()}</div>
 				<ButtonContainer>
 					<ButtonMyProject as={Link} to="/projects">
-						Check My Projects
+						View My Projects
 					</ButtonMyProject>
 				</ButtonContainer>
 			</Container>
