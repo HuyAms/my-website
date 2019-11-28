@@ -18,12 +18,18 @@ export const ProjectContainer = styled(ContainerWrapper)`
 export const ProjectImageContainer = styled.div`
 	flex: 1;
 
-	display: flex;
-	justify-content: flex-end;
+	${media.phone} {
+		margin-bottom: 4.8rem;
+	}
+`
+
+export const ProjectImage = styled.img`
+	max-width: 100%;
+	max-height: 55rem;
+	float: right;
 
 	${media.phone} {
-		justify-content: flex-start;
-		margin-bottom: 4.8rem;
+		float: left;
 	}
 `
 
@@ -32,18 +38,13 @@ export const ProjectContentContainer = styled.div`
 `
 
 export const ProjectContent = styled.div`
-	width: 60%;
+	width: 90%;
 	margin: 0 auto;
 	padding: 1rem;
 
 	${media.phone} {
 		width: 100%;
 	}
-`
-
-export const ProjectImage = styled.img`
-	max-width: 100%;
-	max-height: 55rem;
 `
 
 export const ProjectTag = styled.span`

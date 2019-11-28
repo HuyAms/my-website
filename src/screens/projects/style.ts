@@ -6,3 +6,8 @@ export const ProjectListWrapper = styled.div`
 		background-color: ${props => props.theme.appColors.darkBackground};
 	}
 `
+
+export const Header = styled.div`
+	text-align: center;
+	padding-top: 9.6rem;
+`
